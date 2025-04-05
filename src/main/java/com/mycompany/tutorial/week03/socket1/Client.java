@@ -22,12 +22,16 @@ import java.io.PrintWriter;
 It creates a socket, connects it to a specified port number at a specified IP address.** */
 import java.net.Socket;
 
+import java.util.Scanner;
+
 /* **Define a public class named Client. This class will contain all the logic for our client program.** */
 public class Client{
 
     /* **Define the main method. This is the entry point for any Java application.** */
     public static void main(String[] args){
-    
+        
+        Scanner scanner = new Scanner(System.in);
+        
         /* **Define a final string variable for the server address. 
         "localhost" is used here, which means the server is running on the same machine as the client.** */
         final String SERVER_ADDRESS = "localhost";
@@ -52,7 +56,10 @@ public class Client{
 
             /* **Send a message to the server. The PrintWriter's println method is used here, 
             which sends a string followed by a newline to the server.** */
-            out.println("Hi, I am client!");
+            System.out.print("Tea or Coffee : ");
+            String tc = scanner.nextLine();
+            
+            out.println(tc);
 
             /* **Read the server response and store it in a string variable. 
             The BufferedReader's readLine method is used here, which reads a line of text from the server.** */

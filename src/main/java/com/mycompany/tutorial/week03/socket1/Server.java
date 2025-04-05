@@ -72,12 +72,19 @@ public class Server {
                 String messageClient = in.readLine();
 
                 /* **Print the client's message to the console.** */
-                System.out.println("Client says" + messageClient);
+                System.out.println("Client says , I need " + messageClient);
 
                 /* **Send a response back to the client. The println method of the PrintWriter class 
                 sends a string followed by a newline to the client.** */
-                out.println("Hi I am Server ek whotto");
+                if (messageClient.equalsIgnoreCase("Tea")) {
+                    out.println("Here's your Tea");
+                } else if (messageClient.equalsIgnoreCase("Coffee")) {
+                    out.println("Here's your Coffee");
+                } else {
+                    out.println("Plyn whotto yannaa....."); 
+                }
 
+               
                 /* **Close the client socket. The close method of the Socket class closes the client socket and 
                 releases all associated resources.** */
                 clientSocket.close();
